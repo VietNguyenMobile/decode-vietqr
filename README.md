@@ -7,7 +7,7 @@
     "content": "00020101021138540010A00000072701240006970436011010279436560208QRIBFTTA53037045802VN63046000"
 }
 
-Response success status 200
+// Response success status 200
 
 {
   "success": true,
