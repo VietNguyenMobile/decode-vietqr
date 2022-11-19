@@ -2,7 +2,10 @@
   "name": "decode-vietqr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.ts",
+  "engines": {
+    "node": "14.17.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node dist/app.js",

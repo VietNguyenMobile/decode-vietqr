@@ -33,7 +33,7 @@ app.post(
 
 // app.listen(PORT, () => console.log('Server running'));
 
-const PORT = process.env.port || '5000';
+const PORT = process.env.port || 5000;
 
 app.listen(PORT, () => {
   console.log('Server is running ', PORT);
