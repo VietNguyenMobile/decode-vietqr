@@ -20,33 +20,34 @@ app.use(morgan('tiny'));
 
 const api = process.env.API_URL;
 
-// app.post(
-//   '/decode-vietqr',
-//   (req: Request, res: Response, next: NextFunction) => {
-//     try {
-//       const content_qr_code = req.body.content;
+app.post(
+  '/decode-vietqr',
+  (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const content_qr_code = req.body.content;
 
-//       const qrPay = new QRPay(content_qr_code);
-//       if (qrPay.isValid) {
-//         return res.status(200).json({ success: true, data: qrPay });
-//       } else {
-//         return res
-//           .status(401)
-//           .json({ success: false, error: 'QR Code Invalid' });
-//       }
-//     } catch (error) {
-//       return res.status(400).json({ success: false, error: 'QR Code Invalid' });
-//     }
-//   },
-// );
+      const qrPay = new QRPay(content_qr_code);
+      if (qrPay.isValid) {
+        return res.status(200).json({ success: true, data: qrPay });
+      } else {
+        return res
+          .status(401)
+          .json({ success: false, error: 'QR Code Invalid' });
+      }
+    } catch (error) {
+      return res.status(400).json({ success: false, error: 'QR Code Invalid' });
+    }
+  },
+);
 
 // Routers
-app.use(`${api}/decode`, qrCodeRoutes);
+// app.use(`${api}/decode`, qrCodeRoutes);
 
 // app.listen(PORT, () => console.log('Server running'));
 
-const PORT = process.env.port || 5000;
+const PORT = process.env.port || 6000;
 
 app.listen(PORT, () => {
+  // console.log('api: ', api);
   console.log('Server is running ', PORT);
 });
